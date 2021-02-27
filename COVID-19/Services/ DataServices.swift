@@ -9,17 +9,16 @@ import Foundation
 
 
 protocol ServicesDelegate {
-    func didGetAllServices(all: [All])
+    func didGetAllServices(informations: [InformationCovid])
 }
 
 struct DataServices {
     
-    var apiRoot : String =  "https://covid-api.mmediagroup.fr/v1/cases?country=France"
     var servicesDelegate : ServicesDelegate?
     
     
-    func getAllServices() -> Void {
-        if let url = URL(string: "\(apiRoot)") {
+    func getAllServices(urlParam:String) -> Void {
+        if let url = URL(string: "\(urlParam)") {
             let urlSession = URLSession(configuration: .default)
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
@@ -29,11 +28,14 @@ struct DataServices {
                 
                 if let safeDate = data {
                     let decoder =  JSONDecoder()
-                                        
+    
                     do {
-                        let decoderServices =  try decoder.decode(InformationCovid.self, from: safeDate)
-                        print(decoderServices)
-                        //self.servicesDelegate?.didGetAllServices(all: decoderServices)
+                        let decoderInformations =  try decoder.decode([String:InformationCovid].self, from: safeDate)
+                        var informations: [InformationCovid] = []
+                        if let information = decoderInformations["All"] {
+                            informations.append(information)
+                            self.servicesDelegate?.didGetAllServices(informations: informations )
+                        }
                     } catch {
                         print(error)
                     }

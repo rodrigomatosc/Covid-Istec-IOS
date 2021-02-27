@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,49 +12,413 @@
         <scene sceneID="fQ6-1c-cpd">
             <objects>
                 <tabBarController interfaceStyle="light" id="HZn-hb-hC2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6Qx-cn-eOw"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="fill" id="6sb-Z9-gm9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="VcS-Ne-Vn4" kind="relationship" relationship="viewControllers" id="YgW-eD-4LD"/>
+                        <segue destination="2ec-pz-7nv" kind="relationship" relationship="viewControllers" id="fQb-0A-FOh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdq-Yw-J1k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1803" y="-246"/>
+            <point key="canvasLocation" x="-788" y="-279"/>
         </scene>
         <!--RealTime-->
         <scene sceneID="zex-jU-4JG">
             <objects>
                 <tableViewController id="VcS-Ne-Vn4" customClass="RealTImeTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vjL-t4-3Tw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vjL-t4-3Tw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="dVf-Lg-FVL">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTopBar" translatesAutoresizingMaskIntoConstraints="NO" id="L98-6e-70V">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g3-qz-JG5">
+                                    <rect key="frame" x="16" y="16" width="102" height="33"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Covid-19">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="24" name="OpenSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqg-Bd-nj8">
+                                    <rect key="frame" x="16" y="57" width="382" height="38.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Covid-19 ">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.99997597930000004" blue="1" alpha="0.66598844212412045" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="OpenSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Covid-19 Covid-19 Covid-19 Covid-19 Covid-19 Covid-19 Covid-19 Covid-19 Covid-19">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.99997999999999998" blue="1" alpha="0.66598999999999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="OpenSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfD-eo-NdI">
+                                    <rect key="frame" x="17" y="124" width="147" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="countrybox">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Select a Country">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="15" name="OpenSans-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <segue destination="S2v-re-IrB" kind="show" identifier="segueSelectCountryRealTime" id="fXY-j0-gbE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="L98-6e-70V" firstAttribute="leading" secondItem="dVf-Lg-FVL" secondAttribute="leading" id="8xg-wx-Qei"/>
+                                <constraint firstAttribute="bottom" secondItem="L98-6e-70V" secondAttribute="bottom" id="Eup-hg-K7m"/>
+                                <constraint firstItem="Aqg-Bd-nj8" firstAttribute="top" secondItem="5g3-qz-JG5" secondAttribute="bottom" constant="8" id="Mgs-f3-P4Q"/>
+                                <constraint firstItem="5g3-qz-JG5" firstAttribute="leading" secondItem="dVf-Lg-FVL" secondAttribute="leading" constant="16" id="X4u-9H-QC8"/>
+                                <constraint firstAttribute="trailing" secondItem="L98-6e-70V" secondAttribute="trailing" id="ZVt-Sb-Dzz"/>
+                                <constraint firstItem="Aqg-Bd-nj8" firstAttribute="leading" secondItem="dVf-Lg-FVL" secondAttribute="leading" constant="16" id="gjO-Ux-KYf"/>
+                                <constraint firstItem="5g3-qz-JG5" firstAttribute="top" secondItem="dVf-Lg-FVL" secondAttribute="top" constant="16" id="tsz-e1-oWa"/>
+                                <constraint firstAttribute="trailing" secondItem="Aqg-Bd-nj8" secondAttribute="trailing" constant="16" id="wEE-D6-2pV"/>
+                                <constraint firstItem="L98-6e-70V" firstAttribute="top" secondItem="dVf-Lg-FVL" secondAttribute="top" id="whT-R0-Xqu"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Oi8-66-Tl8" style="IBUITableViewCellStyleDefault" id="rzx-eQ-QVf">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="realTime" id="rzx-eQ-QVf" customClass="RealTimeTableViewCell" customModule="COVID_19" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="213" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rzx-eQ-QVf" id="qBd-fL-lER">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oi8-66-Tl8">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4l-79-4TB">
+                                            <rect key="frame" x="69" y="11" width="52" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Capital:">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-tY-Kbo">
+                                            <rect key="frame" x="16" y="43.5" width="70" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Confirmed">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-k8-8EN">
+                                            <rect key="frame" x="118" y="44" width="71" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Recovered">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf8-Ph-QKn">
+                                            <rect key="frame" x="221" y="44" width="47" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Deaths">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F46-Xu-LT1">
+                                            <rect key="frame" x="201" y="11" width="71" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Continent:">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDM-w8-5QD">
+                                            <rect key="frame" x="129" y="11" width="48" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Capital">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ss-OI-ZHZ">
+                                            <rect key="frame" x="16" y="68.5" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-ub-lYa">
+                                            <rect key="frame" x="16" y="101.5" width="73" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Population">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-Z7-bV6">
+                                            <rect key="frame" x="16" y="126.5" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amk-zy-GXY">
+                                            <rect key="frame" x="121" y="102" width="108" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Life Expectancy">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-78-c7E">
+                                            <rect key="frame" x="121" y="127" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viz-sM-EhI">
+                                            <rect key="frame" x="16" y="159.5" width="121" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="latitude/longitude">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbu-ya-htB">
+                                            <rect key="frame" x="16" y="184.5" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-44-qBl">
+                                            <rect key="frame" x="249" y="225.5" width="76" height="14"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-w1-Knr">
+                                            <rect key="frame" x="118" y="69" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIX-lG-dte">
+                                            <rect key="frame" x="221" y="69" width="89" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="4907876808">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5Y-1Y-WU2">
+                                            <rect key="frame" x="280" y="11" width="48" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Capital">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N59-lM-IIg">
+                                            <rect key="frame" x="173.5" y="225.5" width="67.5" height="14"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="last update:">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="12" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" systemColor="labelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-NJ-Qjv">
+                                            <rect key="frame" x="16" y="11" width="29" height="16.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="USA">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WGg-ub-lYa" firstAttribute="top" secondItem="2Ss-OI-ZHZ" secondAttribute="bottom" constant="16" id="25a-Er-uB5"/>
+                                        <constraint firstItem="Kgu-78-c7E" firstAttribute="leading" secondItem="amk-zy-GXY" secondAttribute="leading" id="3Kr-Og-wXy"/>
+                                        <constraint firstItem="amk-zy-GXY" firstAttribute="leading" secondItem="WGg-ub-lYa" secondAttribute="trailing" constant="32" id="5UR-mX-8hv"/>
+                                        <constraint firstItem="IIX-lG-dte" firstAttribute="top" secondItem="Pf8-Ph-QKn" secondAttribute="bottom" constant="8" id="Agu-Lu-MeH"/>
+                                        <constraint firstItem="N59-lM-IIg" firstAttribute="centerX" secondItem="qBd-fL-lER" secondAttribute="centerX" id="CiM-ji-Lrr"/>
+                                        <constraint firstItem="ohk-k8-8EN" firstAttribute="top" secondItem="gDM-w8-5QD" secondAttribute="bottom" constant="16" id="EmS-gu-jGe"/>
+                                        <constraint firstItem="YsR-NJ-Qjv" firstAttribute="top" secondItem="qBd-fL-lER" secondAttribute="top" constant="11" id="GcJ-80-Vdz"/>
+                                        <constraint firstItem="IIX-lG-dte" firstAttribute="leading" secondItem="Pf8-Ph-QKn" secondAttribute="leading" id="HZD-dV-Tnj"/>
+                                        <constraint firstItem="Pf8-Ph-QKn" firstAttribute="leading" secondItem="ohk-k8-8EN" secondAttribute="trailing" constant="32" id="Hkd-7o-wkF"/>
+                                        <constraint firstItem="ohk-k8-8EN" firstAttribute="leading" secondItem="DuT-tY-Kbo" secondAttribute="trailing" constant="32" id="KT6-lJ-M69"/>
+                                        <constraint firstItem="N59-lM-IIg" firstAttribute="top" secondItem="Sbu-ya-htB" secondAttribute="bottom" constant="24" id="MpN-zB-TfW"/>
+                                        <constraint firstItem="YsR-NJ-Qjv" firstAttribute="leading" secondItem="qBd-fL-lER" secondAttribute="leading" constant="16" id="NUS-4N-4VB"/>
+                                        <constraint firstItem="l5Y-1Y-WU2" firstAttribute="top" secondItem="qBd-fL-lER" secondAttribute="top" constant="11" id="Nob-XM-U3I"/>
+                                        <constraint firstItem="WGg-ub-lYa" firstAttribute="leading" secondItem="qBd-fL-lER" secondAttribute="leading" constant="16" id="OPk-Ym-vBp"/>
+                                        <constraint firstItem="DuT-tY-Kbo" firstAttribute="top" secondItem="YsR-NJ-Qjv" secondAttribute="bottom" constant="16" id="PDU-xi-0Nx"/>
+                                        <constraint firstItem="PZb-w1-Knr" firstAttribute="leading" secondItem="ohk-k8-8EN" secondAttribute="leading" id="QSd-9q-UaR"/>
+                                        <constraint firstItem="gDM-w8-5QD" firstAttribute="top" secondItem="qBd-fL-lER" secondAttribute="top" constant="11" id="Sue-TU-fF1"/>
+                                        <constraint firstItem="amk-zy-GXY" firstAttribute="top" secondItem="PZb-w1-Knr" secondAttribute="bottom" constant="16" id="Yfl-nf-lGL"/>
+                                        <constraint firstItem="viz-sM-EhI" firstAttribute="leading" secondItem="qBd-fL-lER" secondAttribute="leading" constant="16" id="ZwG-hc-sFj"/>
+                                        <constraint firstItem="F46-Xu-LT1" firstAttribute="leading" secondItem="gDM-w8-5QD" secondAttribute="trailing" constant="24" id="d0L-rJ-Cwl"/>
+                                        <constraint firstItem="fvP-44-qBl" firstAttribute="top" secondItem="Sbu-ya-htB" secondAttribute="bottom" constant="24" id="eKt-OI-oxv"/>
+                                        <constraint firstItem="c4l-79-4TB" firstAttribute="leading" secondItem="YsR-NJ-Qjv" secondAttribute="trailing" constant="24" id="erD-Zo-K3W"/>
+                                        <constraint firstItem="DuT-tY-Kbo" firstAttribute="leading" secondItem="qBd-fL-lER" secondAttribute="leading" constant="16" id="ffb-hj-tcE"/>
+                                        <constraint firstItem="Pf8-Ph-QKn" firstAttribute="top" secondItem="F46-Xu-LT1" secondAttribute="bottom" constant="16" id="gJj-3h-JpA"/>
+                                        <constraint firstItem="F46-Xu-LT1" firstAttribute="top" secondItem="qBd-fL-lER" secondAttribute="top" constant="11" id="izO-9E-n9U"/>
+                                        <constraint firstItem="Kgu-78-c7E" firstAttribute="top" secondItem="amk-zy-GXY" secondAttribute="bottom" constant="8" id="mAb-CB-gN1"/>
+                                        <constraint firstItem="AC9-Z7-bV6" firstAttribute="top" secondItem="WGg-ub-lYa" secondAttribute="bottom" constant="8" id="mOz-et-sAo"/>
+                                        <constraint firstItem="l5Y-1Y-WU2" firstAttribute="leading" secondItem="F46-Xu-LT1" secondAttribute="trailing" constant="8" id="mkG-0r-moF"/>
+                                        <constraint firstItem="AC9-Z7-bV6" firstAttribute="leading" secondItem="WGg-ub-lYa" secondAttribute="leading" id="ny6-fp-FUR"/>
+                                        <constraint firstItem="2Ss-OI-ZHZ" firstAttribute="leading" secondItem="DuT-tY-Kbo" secondAttribute="leading" id="pPP-gK-2mr"/>
+                                        <constraint firstItem="gDM-w8-5QD" firstAttribute="leading" secondItem="c4l-79-4TB" secondAttribute="trailing" constant="8" id="pQl-JJ-mhk"/>
+                                        <constraint firstItem="Sbu-ya-htB" firstAttribute="leading" secondItem="viz-sM-EhI" secondAttribute="leading" id="qOh-uK-QnK"/>
+                                        <constraint firstItem="fvP-44-qBl" firstAttribute="leading" secondItem="N59-lM-IIg" secondAttribute="trailing" constant="8" id="qcp-Qd-cki"/>
+                                        <constraint firstItem="Sbu-ya-htB" firstAttribute="top" secondItem="viz-sM-EhI" secondAttribute="bottom" constant="8" id="vRS-WJ-GGr"/>
+                                        <constraint firstItem="viz-sM-EhI" firstAttribute="top" secondItem="AC9-Z7-bV6" secondAttribute="bottom" constant="16" id="xZg-zZ-DPx"/>
+                                        <constraint firstItem="PZb-w1-Knr" firstAttribute="top" secondItem="ohk-k8-8EN" secondAttribute="bottom" constant="8" id="xwU-6H-wNW"/>
+                                        <constraint firstItem="c4l-79-4TB" firstAttribute="top" secondItem="qBd-fL-lER" secondAttribute="top" constant="11" id="z7c-WS-7uh"/>
+                                        <constraint firstItem="2Ss-OI-ZHZ" firstAttribute="top" secondItem="DuT-tY-Kbo" secondAttribute="bottom" constant="8" id="zUs-6n-ifD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <string key="reuseIdentifier">realTime	</string>
+                                <connections>
+                                    <outlet property="capital" destination="gDM-w8-5QD" id="EN8-u2-zUG"/>
+                                    <outlet property="confirmed" destination="2Ss-OI-ZHZ" id="t8e-NA-hAM"/>
+                                    <outlet property="continent" destination="l5Y-1Y-WU2" id="0Ty-6D-2Pc"/>
+                                    <outlet property="country" destination="YsR-NJ-Qjv" id="QhE-3I-znf"/>
+                                    <outlet property="deaths" destination="IIX-lG-dte" id="0Zl-Gp-HOo"/>
+                                    <outlet property="latLong" destination="Sbu-ya-htB" id="EgS-QG-oh6"/>
+                                    <outlet property="lifeEx" destination="Kgu-78-c7E" id="fpZ-ep-Jgp"/>
+                                    <outlet property="population" destination="AC9-Z7-bV6" id="P2G-Yh-xbl"/>
+                                    <outlet property="recovered" destination="PZb-w1-Knr" id="9a9-iG-o8u"/>
+                                    <outlet property="update" destination="fvP-44-qBl" id="050-vt-QBf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,16 +427,283 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="RealTime" image="timer" catalog="system" id="uSx-Jg-xHd"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonCountry" destination="TfD-eo-NdI" id="zQS-0P-qXn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBq-kq-oah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-916" y="-246"/>
+            <point key="canvasLocation" x="-7.2463768115942031" y="-246.42857142857142"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="SPT-GU-xe8">
+            <objects>
+                <tableViewController id="2ec-pz-7nv" customClass="HistoryTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RfT-3Y-BYr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="hrV-J9-TdW">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Knr-qz-GRm">
+                                    <rect key="frame" x="16" y="16" width="29" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="USA">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-bv-hbq">
+                                    <rect key="frame" x="69" y="16" width="52" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Capital:">
+                                            <attributes>
+                                                <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="highlightedColor" systemColor="labelColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bss-aE-xQ2">
+                                    <rect key="frame" x="201" y="16" width="71" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Continent:">
+                                            <attributes>
+                                                <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="highlightedColor" systemColor="labelColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-FF-dhL">
+                                    <rect key="frame" x="129" y="16" width="48" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Capital">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-Q4-kta">
+                                    <rect key="frame" x="280" y="16" width="48" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Capital">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJg-cn-Nay">
+                                    <rect key="frame" x="16" y="57" width="73" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Population">
+                                            <attributes>
+                                                <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="highlightedColor" systemColor="labelColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncy-54-fRk">
+                                    <rect key="frame" x="16" y="82" width="89" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="4907876808">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w0-zr-5wC">
+                                    <rect key="frame" x="121" y="57" width="108" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Life Expectancy">
+                                            <attributes>
+                                                <color key="NSColor" red="0.66620530837189584" green="0.6629869252396644" blue="0.66942369150412717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="highlightedColor" systemColor="labelColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8r-oE-4LN">
+                                    <rect key="frame" x="121" y="82" width="89" height="17"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="4907876808">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="14" name="AmericanTypewriter-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="lOE-bv-hbq" firstAttribute="leading" secondItem="Knr-qz-GRm" secondAttribute="trailing" constant="24" id="0sB-CX-Wpz"/>
+                                <constraint firstItem="bss-aE-xQ2" firstAttribute="top" secondItem="hrV-J9-TdW" secondAttribute="top" constant="16" id="9GK-q8-Jqt"/>
+                                <constraint firstItem="Ncy-54-fRk" firstAttribute="top" secondItem="pJg-cn-Nay" secondAttribute="bottom" constant="8" id="9b7-tn-Jbs"/>
+                                <constraint firstItem="Ncy-54-fRk" firstAttribute="leading" secondItem="pJg-cn-Nay" secondAttribute="leading" id="Biy-zL-rdf"/>
+                                <constraint firstItem="Knr-qz-GRm" firstAttribute="leading" secondItem="hrV-J9-TdW" secondAttribute="leading" constant="16" id="CU8-Bt-Cce"/>
+                                <constraint firstItem="2w0-zr-5wC" firstAttribute="top" secondItem="Mut-FF-dhL" secondAttribute="bottom" constant="24" id="WaU-P4-u64"/>
+                                <constraint firstItem="Mut-FF-dhL" firstAttribute="leading" secondItem="lOE-bv-hbq" secondAttribute="trailing" constant="8" id="WcB-6o-VaU"/>
+                                <constraint firstItem="pJg-cn-Nay" firstAttribute="leading" secondItem="hrV-J9-TdW" secondAttribute="leading" constant="16" id="a8L-Zh-nVy"/>
+                                <constraint firstItem="euO-Q4-kta" firstAttribute="top" secondItem="hrV-J9-TdW" secondAttribute="top" constant="16" id="axJ-4O-b8S"/>
+                                <constraint firstItem="2w0-zr-5wC" firstAttribute="leading" secondItem="pJg-cn-Nay" secondAttribute="trailing" constant="32" id="cmH-R3-2OW"/>
+                                <constraint firstItem="bss-aE-xQ2" firstAttribute="leading" secondItem="Mut-FF-dhL" secondAttribute="trailing" constant="24" id="dhl-9F-lzL"/>
+                                <constraint firstItem="lOE-bv-hbq" firstAttribute="top" secondItem="hrV-J9-TdW" secondAttribute="top" constant="16" id="gNk-4E-Ba6"/>
+                                <constraint firstItem="euO-Q4-kta" firstAttribute="leading" secondItem="bss-aE-xQ2" secondAttribute="trailing" constant="8" id="jhQ-g6-X4V"/>
+                                <constraint firstItem="Mut-FF-dhL" firstAttribute="top" secondItem="hrV-J9-TdW" secondAttribute="top" constant="16" id="opl-pS-T6i"/>
+                                <constraint firstItem="A8r-oE-4LN" firstAttribute="leading" secondItem="2w0-zr-5wC" secondAttribute="leading" id="saW-qd-cXi"/>
+                                <constraint firstItem="pJg-cn-Nay" firstAttribute="top" secondItem="Knr-qz-GRm" secondAttribute="bottom" constant="24" id="tEX-H1-6LN"/>
+                                <constraint firstItem="A8r-oE-4LN" firstAttribute="top" secondItem="2w0-zr-5wC" secondAttribute="bottom" constant="8" id="w2i-aP-VqI"/>
+                                <constraint firstItem="Knr-qz-GRm" firstAttribute="top" secondItem="hrV-J9-TdW" secondAttribute="top" constant="16" id="w9L-2Y-q33"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="history" textLabel="jxD-vr-api" detailTextLabel="1WW-Xx-iW2" style="IBUITableViewCellStyleValue1" id="svY-Ei-kZY">
+                                <rect key="frame" x="0.0" y="175" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="svY-Ei-kZY" id="bhr-5D-9lx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jxD-vr-api">
+                                            <rect key="frame" x="20" y="12" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1WW-Xx-iW2">
+                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2ec-pz-7nv" id="XXC-ZA-Mja"/>
+                            <outlet property="delegate" destination="2ec-pz-7nv" id="Zdv-Wl-ssr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="History" id="S1s-ZK-JUw"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="capital" destination="Mut-FF-dhL" id="TIJ-zI-gzb"/>
+                        <outlet property="continent" destination="euO-Q4-kta" id="gJF-sP-h79"/>
+                        <outlet property="country" destination="Knr-qz-GRm" id="g2u-Ps-g78"/>
+                        <outlet property="lifeExp" destination="A8r-oE-4LN" id="5fZ-da-pfC"/>
+                        <outlet property="population" destination="Ncy-54-fRk" id="ID3-s2-lez"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScG-42-Su6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="-246.42857142857142"/>
+        </scene>
+        <!--Spinner View Controller-->
+        <scene sceneID="q0H-nz-CWV">
+            <objects>
+                <viewController id="S2v-re-IrB" customClass="SpinnerViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5AR-3a-Luf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKk-KW-pV8">
+                                <rect key="frame" x="137" y="68" width="140.5" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Select a country">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="AmericanTypewriter-Semibold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQj-Uy-Rci">
+                                <rect key="frame" x="47" y="105" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGq-b6-dtu">
+                                <rect key="frame" x="343" y="337" width="55" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="onClickConfirm:" destination="S2v-re-IrB" eventType="touchUpInside" id="4dg-j7-e89"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leq-ZT-7X5">
+                                <rect key="frame" x="16" y="337" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onClickCancel:" destination="S2v-re-IrB" eventType="touchUpInside" id="S8T-3O-bhM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CaV-4Y-1cV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CaV-4Y-1cV" firstAttribute="trailing" secondItem="IGq-b6-dtu" secondAttribute="trailing" constant="16" id="3As-ci-ObY"/>
+                            <constraint firstItem="Leq-ZT-7X5" firstAttribute="leading" secondItem="CaV-4Y-1cV" secondAttribute="leading" constant="16" id="3nv-wF-3pd"/>
+                            <constraint firstItem="VQj-Uy-Rci" firstAttribute="top" secondItem="xKk-KW-pV8" secondAttribute="bottom" constant="16" id="Ley-Ii-wKe"/>
+                            <constraint firstItem="IGq-b6-dtu" firstAttribute="top" secondItem="VQj-Uy-Rci" secondAttribute="bottom" constant="16" id="QHU-mA-rF7"/>
+                            <constraint firstItem="xKk-KW-pV8" firstAttribute="centerX" secondItem="CaV-4Y-1cV" secondAttribute="centerX" id="RJR-gR-d4i"/>
+                            <constraint firstItem="xKk-KW-pV8" firstAttribute="top" secondItem="CaV-4Y-1cV" secondAttribute="top" constant="24" id="Zwa-dk-ts0"/>
+                            <constraint firstItem="Leq-ZT-7X5" firstAttribute="top" secondItem="VQj-Uy-Rci" secondAttribute="bottom" constant="16" id="azk-nu-nbb"/>
+                            <constraint firstItem="VQj-Uy-Rci" firstAttribute="centerX" secondItem="CaV-4Y-1cV" secondAttribute="centerX" id="x0a-RU-DIK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="58p-80-pgv"/>
+                    <connections>
+                        <outlet property="confirm" destination="IGq-b6-dtu" id="GKH-k4-Ayy"/>
+                        <outlet property="pickerCountry" destination="VQj-Uy-Rci" id="Ng1-aM-P9M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heN-v2-7rj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="-972"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundTopBar" width="383.5" height="214.5"/>
+        <image name="countrybox" width="112" height="23"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

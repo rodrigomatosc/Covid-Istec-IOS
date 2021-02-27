@@ -7,6 +7,6 @@
 
 import Foundation
 
-class All: Codable {
+struct All: Codable {
     var informationCovid : InformationCovid
 }

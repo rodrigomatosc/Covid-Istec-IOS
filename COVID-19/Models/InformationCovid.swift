@@ -7,21 +7,19 @@
 
 import Foundation
 
-class InformationCovid: Codable {
-//    public var confirmed : String
-//    public var recovered : String
-//    var deaths : String
-    var country : String
-//    var population : String
-//    var sqkmArea : String
-//    var lifeExpectancy : String
-//    var elevationInMeters : String
-//    var continent : String
-//    var abbreviation : String
-//    var location : String
-//    var iso : String
-//    var capitalCity : String
-//    var lat : String
-//    var longitude : String
-//    var updated : String
+struct InformationCovid: Codable {
+    var confirmed : Float?
+    var recovered : Float?
+    var deaths : Float?
+    var country : String?
+    var population : Float?
+    var life_expectancy : String?
+    var continent : String?
+    var abbreviation : String?
+    var location : String?
+    var capital_city : String?
+    var lat : String?
+    var long : String?
+    var updated : String?
+    var dates : [String : Float]?
 }
