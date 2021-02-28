@@ -39,6 +39,12 @@ class SpinnerViewController: UIViewController, ServicesDelegateCountry {
                 ecra.setCountry(country)
              })
         }
+        
+        if let ecra = self.delegateView as? HistoryTableViewController {
+             dismiss(animated: true, completion: {
+                ecra.setCountry(country)
+             })
+        }
     }
     
     override func viewDidLoad() {

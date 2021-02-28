@@ -36,35 +36,39 @@ class RealTImeTableViewController: UITableViewController, ServicesDelegate {
         return self.informations.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "realTime", for: indexPath) as!RealTimeTableViewCell
 
         let information = informations[indexPath.row]
         
+
         cell.country.text = information.country
         cell.capital.text = information.capital_city
         cell.continent.text = information.continent
-        cell.confirmed.text = information.confirmed?.description
-        cell.recovered.text = information.recovered?.description
-        cell.deaths.text = information.deaths?.description
-        cell.population.text = information.population?.description
+        cell.confirmed.text = Int(information.confirmed ?? 0).description
+        cell.recovered.text = Int(information.recovered ?? 0).description
+        cell.deaths.text = Int(information.deaths ?? 0).description
+        cell.population.text = Int(information.population ?? 0).description
         cell.lifeEx.text = information.life_expectancy
-        cell.latLong.text = "\(information.lat)/\(information.long)"
-        cell.update.text = information.updated
+       
+        if let updated = information.updated {
+            cell.update.text = updated
+        }
+        
+        if let longitude = information.long {
+            if let latitude = information.lat {
+                cell.latLong.text = "\(latitude)/\(longitude)"
+            }
+        }
         
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-
         let destination = segue.destination as! SpinnerViewController
                destination.delegateView = self
         
-        if segue.identifier == "segueSelectCountryRealTime" {
-            print("esta indo para a segue correta")
-        }
     }
 
     func setCountry(_ countrySent: Country) {
@@ -78,6 +82,15 @@ class RealTImeTableViewController: UITableViewController, ServicesDelegate {
             self.country = countrySent
             
             if let name = self.country?.name {
+                
+                
+                self.informations = []
+                
+                DispatchQueue.main.async {
+                    self.buttonCountry.setAttributedTitle(NSAttributedString(string: name), for: .normal)
+                    self.tableView.reloadData()
+                }
+                
                 dataService.servicesDelegate = self
                 dataService.getAllServices(urlParam:"https://covid-api.mmediagroup.fr/v1/cases?country=\(name)")
             }
